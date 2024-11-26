@@ -1,6 +1,6 @@
 export const INFORMACIONDESCRIPCION = [
   {
-    titulo: "DESCRIPCIÓN",
+    titulo: "DESCRIPCIÓN1111",
     contenido: `
         Participa es un espacio creado para involucrar a la ciudadanía
         en las decisiones gubernamentales que les afectan. Este espacio,
@@ -50,9 +50,7 @@ export const ESTRATEGIASPARTICIPACIONCIUDADANA = [
        construcción de la sociedad. Esto sin perjuicio de los mecanismos de
        participación legales y constitucionales que tienen los ciudadanos en el
        ejercicio de la participación.`,
-    links: [
-      
-    ],
+    links: [],
   },
 ];
 
