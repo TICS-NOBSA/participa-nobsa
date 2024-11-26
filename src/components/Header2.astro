@@ -1,0 +1,117 @@
+---
+import { datosGenerales } from "../scripts/menuData";
+---
+
+<section class="max-w-screen-xl mx-auto px-5 bg-white min-h-screen">
+  {
+    datosGenerales.map((item) => {
+      switch (item.tipo) {
+        case "titulo":
+          return <h2 class="text-2xl font-bold my-4">{item.contenido}</h2>;
+
+        case "descripcion":
+          return (
+            <div class="py-3">
+              {item.contenido.map((parrafo) => (
+                <p class="text-neutral-600 mt-3 text-justify">{parrafo}</p>
+              ))}
+            </div>
+          );
+
+        case "lista":
+          return (
+            <ul class="max-w-md space text-black-500 list-disc list-inside mt-2 mb-2 mx-5">
+              {item.contenido.map((elemento, index) => (
+                <li key={index}>{elemento.nombre}</li>
+              ))}
+            </ul>
+          );
+
+        case "mecanismos":
+          return (
+            <div class="py-3">
+              <details class="group">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#C04120]">
+                  <span>Mecanismos de Participación Ciudadana</span>
+                  <span class="transition-transform group-open:rotate-180">
+                    <svg
+                      fill="none"
+                      height="24"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </span>
+                </summary>
+                <p class="text-neutral-600 mt-3">{item.contenido}</p>
+                {item.submenu.map((subitem) => (
+                  <div class="mt-3">
+                    <details class="group">
+                      <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#C04120]">
+                        <span>{subitem.nombre}</span>
+                        <span class="transition-transform group-open:rotate-180">
+                          <svg
+                            fill="none"
+                            height="24"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            viewBox="0 0 24 24"
+                            width="24"
+                          >
+                            <path d="M6 9l6 6 6-6" />
+                          </svg>
+                        </span>
+                      </summary>
+                      <p class="text-neutral-900 mt-3">{subitem.descripcion}</p>
+                    </details>
+                  </div>
+                ))}
+              </details>
+            </div>
+          );
+
+        case "paac":
+          return (
+            <div class="py-3">
+              <details class="group">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#C04120]">
+                  <span>PAAC</span>
+                  <span class="transition-transform group-open:rotate-180">
+                    <svg
+                      fill="none"
+                      height="24"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </span>
+                </summary>
+                <ul class="max-w-md space text-black-500 list-disc list-inside mt-2 mb-2 mx-5">
+                  {item.contenido.map((enlace, index) => (
+                    <a href={enlace.url} target="_blank" key={index}>
+                      <li>{enlace.texto}</li>
+                    </a>
+                  ))}
+                </ul>
+              </details>
+            </div>
+          );
+
+        default:
+          return null;
+      }
+    })
+  }
+</section>

@@ -1,0 +1,564 @@
+---
+import {
+  INFORMACIONDESCRIPCION,
+  PACC,
+  ESTRATEGIASPARTICIPACIONCIUDADANA,
+  RENDICIONDECUENTAS,
+  ESTRATEGIASREDICIONDECUENTAS,
+} from "../scripts/menuData.js";
+---
+
+<section>
+  <div class="max-w-screen-xl mx-auto px-5 bg-white min-h-screen">
+    <div
+      class="grid divide-y divide-neutral-200 max-xl:grid-cols-1 mx-auto mt-4"
+      id="accordion"
+    >
+      <!-- MENÚ DESCRIPCION -->
+      <div class="py-3">
+        {
+          INFORMACIONDESCRIPCION.map((item) => (
+            <details class="group">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#404D40]">
+                <span>{item.titulo}</span>
+                <span class="transition-transform group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </span>
+              </summary>
+              <p class="text-neutral-600 mt-3 group-open:animate-fadeIn text-justify mx-5">
+                {item.contenido}
+              </p>
+              {item.list && (
+                <ul class="max-w-md space text-black-500 list-disc list-inside mt-2 mb-2 mx-10">
+                  {item.list.map((listItem) => (
+                    <li>
+                      <b>{listItem}</b>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </details>
+          ))
+        }
+      </div>
+
+      <!-- MENÚ MECANISMOS DE PARTICIPACION -->
+      <div class="py-3">
+        <details class="group" id="main-menu">
+          <summary
+            class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#404D40]"
+          >
+            <span>¿MECANISMOS DE PARTICIPACIÓN CIUDADANA?</span>
+            <span class="transition-transform group-open:rotate-180">
+              <svg
+                fill="none"
+                height="24"
+                shape-rendering="geometricPrecision"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </summary>
+          <p
+            class="text-neutral-600 mt-3 group-open:animate-fadeIn text-justify mx-5"
+          >
+            Los mecanismos de participación “Son herramientas que posee la
+            ciudadanía para dar su opinión y tomar decisiones relevantes para la
+            construcción de la sociedad”. Esto sin perjuicio de los mecanismos
+            legales y constitucionales que tienen los ciudadanos en el ejercicio
+            de la participación.
+          </p>
+
+          <!-- Submenú dentro del menú principal, inicialmente cerrado -->
+          <div class="mt-3 max-w-[calc(100%-50px)] ml-8">
+            <details class="group" id="submenu">
+              <summary
+                class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#C04120]"
+              >
+                <span>Acción de cumplimiento</span>
+                <span class="transition-transform group-close:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <p class="text-neutral-900 mt-3 group-open:animate-fadeIn">
+                Su objetivo es otorgarle a toda persona, natural o jurídica, e
+                incluso a los servidores públicos, la posibilidad de acudir ante
+                la autoridad judicial para exigir el cumplimiento del deber que
+                surge de la ley o del acto administrativo y que es omitido por
+                la autoridad, o el particular cuando asume esta condición.
+              </p>
+            </details>
+          </div>
+
+          <div class="mt-3 max-w-[calc(100%-50px)] ml-8">
+            <details class="group" id="submenu">
+              <summary
+                class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#C04120]"
+              >
+                <span>Acción de tutela</span>
+                <span class="transition-transform group-close:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <p class="text-neutral-900 mt-3 group-open:animate-fadeIn">
+                Mecanismo a través del cual toda persona puede reclamar ante los
+                jueces la protección inmediata de sus derechos fundamentales,
+                cuando éstos son vulnerados o amenazados por la acción o la
+                omisión de cualquier autoridad o de los particulares en los
+                casos establecidos en la ley.
+              </p>
+            </details>
+          </div>
+
+          <div class="mt-3 max-w-[calc(100%-50px)] ml-8">
+            <details class="group" id="submenu">
+              <summary
+                class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#C04120]"
+              >
+                <span>Denuncias</span>
+                <span class="transition-transform group-close:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <p class="text-neutral-900 mt-3 group-open:animate-fadeIn">
+                De acuerdo con lo establecido en la Ley 906 de 2004, toda
+                persona debe denunciar a la autoridad los delitos de cuya
+                comisión tenga conocimiento y que deban investigarse de oficio,
+                este proceso se puede denunciar de forma verbal, escrita o por
+                cualquier medio permitido que lleve a la identificación del
+                autor.
+              </p>
+            </details>
+          </div>
+
+          <div class="mt-3 max-w-[calc(100%-50px)] ml-8">
+            <details class="group" id="submenu">
+              <summary
+                class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#C04120]"
+              >
+                <span>Derechos de petición</span>
+                <span class="transition-transform group-close:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <p class="text-neutral-900 mt-3 group-open:animate-fadeIn">
+                Es aquel derecho que tiene toda persona a presentar peticiones
+                respetuosas a las autoridades, en los términos señalados, por
+                motivo de interés general o particular, y a obtener pronta
+                resolución completa y de fondo sobre la misma.
+              </p>
+            </details>
+          </div>
+        </details>
+      </div>
+
+      <!-- MENÚ ESTRATEGIAS DE PARTICIPACION -->
+      <div class="py-3">
+        {
+          ESTRATEGIASPARTICIPACIONCIUDADANA.map((item) => (
+            <details class="group" id="main-menu">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#C04120]">
+                <span>{item.titulo}</span>
+                <span class="transition-transform group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </span>
+              </summary>
+              <p class="text-neutral-600 mt-3 group-open:animate-fadeIn text-justify mx-5">
+                {item.contenido}
+              </p>
+              <ul class="max-w-md space text-black-500 list-disc list-inside mt-2 mb-2 mx-10">
+                {item.links.map((link) => (
+                  <a href={link.url} target="_blank">
+                    <li>{link.text}</li>
+                  </a>
+                ))}
+              </ul>
+            </details>
+          ))
+        }
+      </div>
+
+      <!-- MENÚ ESTRATEGIAS DE RENDICÓN DE CUENTAS -->
+      <div class="py-3">
+        {
+          ESTRATEGIASREDICIONDECUENTAS.map((item) => (
+            <details class="group" id="main-menu">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#C04120]">
+                <span>{item.titulo}</span>
+                <span class="transition-transform group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </span>
+              </summary>
+              <p class="text-neutral-600 mt-3 group-open:animate-fadeIn text-justify mx-5">
+                {item.contenido}
+              </p>
+              <ul class="max-w-md space text-black-500 list-disc list-inside mt-2 mb-2 mx-10">
+                {item.links.map((link) => (
+                  <a href={link.url} target="_blank">
+                    <li>{link.text}</li>
+                  </a>
+                ))}
+              </ul>
+            </details>
+          ))
+        }
+      </div>
+
+      <!-- MENÚ PACC -->
+      <div class="py-3">
+        {
+          PACC.map((item) => (
+            <details class="group" id="main-menu">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#C04120]">
+                <span>{item.titulo}</span>
+                <span class="transition-transform group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </span>
+              </summary>
+              <p class="text-neutral-600 mt-3 group-open:animate-fadeIn text-justify mx-5">
+                {item.contenido}
+              </p>
+              <ul class="max-w-md space text-black-500 list-disc list-inside mt-2 mb-2 mx-10">
+                {item.links.map((link) => (
+                  <a href={link.url} target="_blank">
+                    <li>{link.text}</li>
+                  </a>
+                ))}
+              </ul>
+            </details>
+          ))
+        }
+      </div>
+
+      <!-- MENÚ INFORME RENDICIÓN DE CUENTAS -->
+      <div class="py-3">
+        {
+          RENDICIONDECUENTAS.map((item) => (
+            <details class="group" id="main-menu">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#C04120]">
+                <span>{item.titulo}</span>
+                <span class="transition-transform group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </span>
+              </summary>
+              <p class="text-neutral-600 mt-3 group-open:animate-fadeIn text-justify mx-5">
+                {item.contenido}
+              </p>
+              <ul class="max-w-md space text-black-500 list-disc list-inside mt-2 mb-2 mx-10">
+                {item.links.map((link) => (
+                  <a href={link.url} target="_blank">
+                    <li>{link.text}</li>
+                  </a>
+                ))}
+              </ul>
+            </details>
+          ))
+        }
+      </div>
+
+      <!-- MENÚ CONVOCATORIAS CIUDADANIA -->
+      <div class="py-3">
+        <details class="group">
+          <summary
+            class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#C04120]"
+          >
+            <span>CONVOCATORIAS PARA LA PARTICIPACIÓN DE LA CIUDADANÍA</span>
+
+            <span class="transition-transform group-open:rotate-180">
+              <svg
+                fill="none"
+                height="24"
+                shape-rendering="geometricPrecision"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </summary>
+        </details>
+      </div>
+
+      <!-- MENÚ CALENDARIOS PARTICIPACION CIUDADANA -->
+      <div class="py-3">
+        <details class="group">
+          <summary
+            class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#C04120]"
+          >
+            <span
+              >CALENDARIO DE LA ESTRATEGIA ANUAL DE PARTICIPACIÓN CIUDADANA</span
+            >
+
+            <span class="transition-transform group-open:rotate-180">
+              <svg
+                fill="none"
+                height="24"
+                shape-rendering="geometricPrecision"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </summary>
+        </details>
+      </div>
+
+      <!-- MENÚ FORMULARIO INSCRIPCION CIUDADANA -->
+      <div class="py-3">
+        <details class="group">
+          <summary
+            class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#C04120]"
+          >
+            <span
+              >FORMULARIO DE INSCRIPCIÓN CIUDADANA A PROCESOS DE PARTICIPACIÓN,
+              INSTANCIAS O ACCIONES QUE OFRECE LA ENTIDAD</span
+            >
+
+            <span class="transition-transform group-open:rotate-180">
+              <svg
+                fill="none"
+                height="24"
+                shape-rendering="geometricPrecision"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </summary>
+        </details>
+      </div>
+
+      <!-- MENÚ CANAL DE ATENCIÓN CIUDADANA -->
+      <div class="py-3">
+        <details class="group">
+          <summary
+            class="flex justify-between items-center font-medium cursor-pointer list-none p-3 rounded-lg transition-bg bg-[#404D40] text-white group-open:bg-[#C04120]"
+          >
+            <span
+              >CANAL DE INTERACCIÓN DELIBERATORIA PARA LA PARTICIPACIÓN
+              CIUDADANA.</span
+            >
+            <span class="transition-transform group-open:rotate-180">
+              <svg
+                fill="none"
+                height="24"
+                shape-rendering="geometricPrecision"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </summary>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const detailsElements = document.querySelectorAll("details");
+    detailsElements.forEach((details) => {
+      details.addEventListener("toggle", (event) => {
+        const targetDetails = event.target;
+        const summary = targetDetails.querySelector("summary span svg");
+        if (targetDetails.open) {
+          summary.classList.add("rotate-180");
+        } else {
+          summary.classList.remove("rotate-180");
+        }
+      });
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const accordion = document.getElementById("accordion");
+    const detailsElements = accordion.querySelectorAll("details");
+
+    detailsElements.forEach((details) => {
+      const summary = details.querySelector("summary"); // Obtener el summary asociado
+
+      // Set initial background color for submenus
+      if (details.closest("#submenu")) {
+        summary.style.backgroundColor = "#A9A9A9"; // Lighter gray for submenus
+      } else {
+        summary.style.backgroundColor = "#404D40"; // Initial color for main menu
+      }
+      summary.style.color = "white";
+
+      details.addEventListener("toggle", () => {
+        if (details.open) {
+          // Check if the details element is a submenu
+          const isSubmenu = details.closest("#submenu") !== null;
+
+          if (isSubmenu) {
+            summary.style.backgroundColor = "#C85D40"; // Slightly lighter color for submenu when open
+          } else {
+            summary.style.backgroundColor = "#C04120"; // Main menu color when open
+          }
+          summary.style.color = "white";
+
+          // Close other details elements on the same level
+          detailsElements.forEach((otherDetails) => {
+            if (details !== otherDetails) {
+              const otherSummary = otherDetails.querySelector("summary");
+              const otherIsSubmenu = otherDetails.closest("#submenu") !== null;
+
+              if (isSubmenu === otherIsSubmenu) {
+                otherDetails.open = false;
+                if (otherSummary) {
+                  if (otherIsSubmenu) {
+                    otherSummary.style.backgroundColor = "#A9A9A9"; // Reset to lighter gray when closed
+                  } else {
+                    otherSummary.style.backgroundColor = "#404D40"; // Reset to initial main menu color
+                  }
+                  otherSummary.style.color = "white";
+                }
+              }
+            }
+          });
+        } else {
+          if (details.closest("#submenu")) {
+            summary.style.backgroundColor = "#A9A9A9"; // Reset to lighter gray for submenus when closed
+          } else {
+            summary.style.backgroundColor = "#404D40"; // Reset to initial color for main menu when closed
+          }
+          summary.style.color = "white";
+        }
+      });
+    });
+  });
+</script>
