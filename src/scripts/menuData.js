@@ -1,6 +1,6 @@
 export const INFORMACIONDESCRIPCION = [
   {
-    titulo: "DESCRIPCIÓN1111",
+    titulo: "DESCRIPCIÓN",
     contenido: `
         Participa es un espacio creado para involucrar a la ciudadanía
         en las decisiones gubernamentales que les afectan. Este espacio,
