@@ -22,6 +22,7 @@ export const INFORMACIONDESCRIPCION = [
 export const PACC = [
   {
     titulo: "PLAN ANTICORRUPCIÓN Y ATENCIÓN AL CIUDADANO (PAAC)",
+    url2: "https://drive.google.com/drive/folders/1OWeoqK-1QYagcC7Umylh786D3n-iY1nP?usp=sharing",
     contenido: `
         El Plan Anticorrupción y Atención al Ciudadano (PAAC) es un
         instrumento de gobierno abierto que promueve la transparencia, la
@@ -36,6 +37,10 @@ export const PACC = [
       {
         text: "Plan Anticorrupción y Atención al Ciudadano (PAAC) 2023",
         url: "https://drive.google.com/file/d/11aMX6pIeha5va6SilQa8boghRmzmaw4L/view?usp=drive_link",
+      },
+      {
+        text: "Informes y seguimientos PAAC",
+        url: "https://drive.google.com/drive/folders/1F0AIYZqETB3XvxakxBi7z-tWb6pCvBzG",
       },
     ],
   },
